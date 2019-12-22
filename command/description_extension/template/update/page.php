@@ -29,7 +29,7 @@
                         <option value='0'>无</option>
 @endif
 @^^foreach (${{ english_word_pluralize($attribute_name) }} as $id => ${{ $attribute_name }})
-                        <option value='^^{^^{ $id ^^}^^}' ^^{^^{ $id === ${{ $entity_name }}->{{ $attribute_name }}_id?'selected':'' ^^}^^}>^^{^^{ ${{ $attribute_name }}->display_for_{{ $relationship['self_attribute_name'] }}_{{ $attribute_name }}() ^^}^^}</option>
+                        <option value='^^{^^{ $id ^^}^^}' ^^{^^{ $id  === ${{ $entity_name }}->{{ $attribute_name }}_id?'selected':'' ^^}^^}>^^{^^{ ${{ $attribute_name }}->display_for_{{ $relationship['self_attribute_name'] }}_{{ $attribute_name }}() ^^}^^}</option>
 @^^endforeach
                     </select>
                   </div>
