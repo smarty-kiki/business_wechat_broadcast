@@ -21,3 +21,4 @@ sed_name $ROOT_DIR/project/config/production/nginx/$1.conf $1
 sed_name $ROOT_DIR/project/config/production/supervisor/queue_worker.conf $1
 sed_name $ROOT_DIR/project/tool/start_dev_server.sh $1
 sed_name $ROOT_DIR/project/tool/after_dev_env_start.sh $1
+sed_name $ROOT_DIR/view/index/index.php $1
