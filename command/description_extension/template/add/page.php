@@ -24,7 +24,7 @@
                 <div class="layui-col-lg6">
                   <label class="layui-form-label">{{ $relationship['entity_display_name'] }}：</label>
                   <div class="layui-input-block">
-                    <select name="{{ $attribute_name }}_id" lay-verify="required" lay-filter="aihao" lay-search>
+                    <select name="{{ $attribute_name }}_id" lay-filter="aihao" lay-search>
 @if ($relationship['association_type'] === 'aggregation')
                         <option value='0'>无</option>
 @endif

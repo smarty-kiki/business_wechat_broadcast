@@ -7,7 +7,7 @@ return [
     ],
     'formater' => [
         [
-            'function' => 'mb_strlen($value) <= 15',
+            'function' => 'mb_strlen($value) >= 15',
             'failed_message' => '名称不能超过 15 个字',
         ],
     ],
