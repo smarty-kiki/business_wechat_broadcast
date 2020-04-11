@@ -13,4 +13,5 @@ ln -fs $ROOT_DIR/project/config/production/supervisor/layui_mvc_frame_queue_work
 /usr/bin/supervisorctl update
 /usr/bin/supervisorctl restart layui_mvc_frame_queue_worker:*
 
+chmod 777 /var/www/layui_mvc_frame/view/blade
 rm -rf /var/www/layui_mvc_frame/view/blade/*.php
