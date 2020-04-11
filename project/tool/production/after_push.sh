@@ -11,4 +11,4 @@ ln -fs $ROOT_DIR/project/config/production/nginx/layui_mvc_frame.conf /etc/nginx
 
 ln -fs $ROOT_DIR/project/config/production/supervisor/layui_mvc_frame_queue_worker.conf /etc/supervisor/conf.d/layui_mvc_frame_queue_worker.conf
 /usr/bin/supervisorctl update
-/usr/bin/supervisorctl restart mvc_frame_queue_worker:*
+/usr/bin/supervisorctl restart layui_mvc_frame_queue_worker:*
