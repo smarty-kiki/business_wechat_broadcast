@@ -119,23 +119,51 @@ command('entity:make-from-description', '从实体描述文件初始化 entity�
 
         $relationship_infos = description_get_relationship_with_snaps_by_entity($entity_name);
 
-        $path = ENTITY_DIR.'/'.$entity_name.'.php';
-        $new_content = _generate_entity_file($entity_name, $entity_info, $relationship_infos);
-        if (is_file($path)) {
-            $new_content = _merge_content_by_annotate(file_get_contents($path), $new_content);
+        $entity_path = ENTITY_DIR.'/'.$entity_name.'.php';
+        $entity_new_content = _generate_entity_file($entity_name, $entity_info, $relationship_infos);
+        if (is_file($entity_path)) {
+            $entity_new_content = _merge_content_by_annotate(file_get_contents($entity_path), $entity_new_content);
         }
-        file_put_contents($path, $new_content); echo $path."\n";
 
-        $path = DAO_DIR.'/'.$entity_name.'.php';
-        $new_content = _generate_dao_file($entity_name, $entity_info, $relationship_infos);
-        if (is_file($path)) {
-            $new_content = _merge_content_by_annotate(file_get_contents($path), $new_content);
+        $dao_path = DAO_DIR.'/'.$entity_name.'.php';
+        $dao_new_content = _generate_dao_file($entity_name, $entity_info, $relationship_infos);
+        if (is_file($dao_path)) {
+            $dao_new_content = _merge_content_by_annotate(file_get_contents($dao_path), $dao_new_content);
         }
-        file_put_contents($path, $new_content); echo $path."\n";
 
         error_log(_generate_migration_file($entity_name, $entity_info, $relationship_infos), 3, $file = migration_file_path($entity_name));
         echo $file."\n";
+        file_put_contents($entity_path, $entity_new_content); echo $entity_path."\n";
+        file_put_contents($dao_path, $dao_new_content); echo $dao_path."\n";
 
         echo "\n需要重新生成 domain/autoload.php 以加载 $entity_name\n";
+    }
+});/*}}}*/
+
+command('entity:restep-last-id', '刷新 ID 生成器的最新 id', function ()
+{/*{{{*/
+    $res = db_query('show tables');
+
+    $entity_title = 'entity';
+    $last_id_title = 'last_id';
+    $col_width = strlen($entity_title) + 3;
+    $max_id_infos = [];
+
+    foreach ($res as $v) {
+        $table = reset($v);
+        if ($table !== MIGRATION_TABLE) {
+            $max_id = db_query_value('id', 'select id from '.$table.' order by id desc');
+            if ($max_id > 0) {
+                cache_set($table.IDGENTER_CACHE_KEY_SUFFIX, $max_id);
+                $max_id_infos[$table] = $max_id;
+                $col_width = max($col_width, (strlen($table) + 3));
+            }
+        }
+    }
+
+    echo str_pad($entity_title, $col_width, ' ').$last_id_title."\n";
+    echo str_pad('', $col_width + strlen($last_id_title), '-')."\n";
+    foreach ($max_id_infos as $table => $max_id) {
+        echo str_pad($table, $col_width, ' ').$max_id."\n";
     }
 });/*}}}*/
