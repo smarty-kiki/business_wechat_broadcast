@@ -4,7 +4,7 @@ class {{ $entity_name }} extends entity
     public $structs = [
 @foreach ($relationship_infos['relationships'] as $attribute_name => $relationship)
 @if ($relationship['relationship_type'] === 'belongs_to')
-        '{{ $attribute_name }}_id' => '',
+        '{{ $attribute_name }}_id' => 0,
 @foreach ($relationship['snaps'] as $structs)
 @foreach ($structs as $struct_name => $struct)
 @if (array_key_exists('default', $struct['database_field']))
@@ -264,7 +264,7 @@ $relationship_attribute_names = explode('.', $snap_relation_to_with_dot);
         otherwise(
             ${{ $attribute_name }} instanceof {{ $entity }} ||
             ${{ $attribute_name }} instanceof null_entity,
-        '{{ $attribute_name }} 类型必须为 {{ $entity }} 或者 null_entity');
+            '{{ $attribute_name }} 类型必须为 {{ $entity }} 或者 null_entity');
 
         if (${{ $attribute_name }} instanceof {{ $entity }}) {
 @foreach ($structs as $struct_name => $struct)
