@@ -72,22 +72,10 @@
       <div class="layui-side layui-side-menu">
         <div class="layui-side-scroll">
           <div class="layui-logo" lay-href="/dashboard">
-            <span>business_wechat_broadcast</span>
+            <span>广播中心</span>
           </div>
 
           <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu" lay-filter="layadmin-system-side-menu">
-            <li data-name="home" class="layui-nav-item layui-nav-itemed">
-              <a href="javascript:;" lay-tips="主页" lay-direction="2">
-                <i class="layui-icon layui-icon-home"></i>
-                <cite>主页</cite>
-              </a>
-              <dl class="layui-nav-child">
-                <dd data-name="console" class="layui-this">
-                  <a lay-href="/dashboard">看板</a>
-                </dd>
-              </dl>
-            </li>
-
             @foreach ($tree_infos as $tree_info)
             <li data-name="{{ $tree_info['key'] }}" class="layui-nav-item">
               <a href="javascript:;" lay-tips="{{ $tree_info['name'] }}" lay-direction="2">

@@ -57,7 +57,7 @@
                 <div class="layui-col-lg6">
                   <label class="layui-form-label">要发送的消息：</label>
                   <div class="layui-input-block">
-                    <input type="text" name="message" lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
+                    <textarea name="message" placeholder="请输入" lay-verify="required" class="layui-textarea"></textarea>
                   </div>
                 </div>
               </div>
