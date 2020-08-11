@@ -52,7 +52,7 @@
       ,height: 'full-100'
       ,cellMinWidth: 80
       ,page: false
-      ,cols: [[{"field":"id","title":"ID","sort":true},{"field":"name","title":"任务名","sort":true,"align":"center"},{"field":"crontab_rule","title":"时间规则","sort":true,"align":"center"},{"field":"robot_url","title":"机器人URL","sort":true,"align":"center"},{"field":"status","title":"状态","sort":true,"align":"center"},{"field":"message","title":"要发送的消息","sort":true,"align":"center"},{"field":"create_time","title":"添加时间","sort":true},{"field":"update_time","title":"修改时间","sort":true},{"fixed":"right","title":"操作","toolbar":"#task-table-bar","width":150}]]
+      ,cols: [[{"field":"id","title":"ID","sort":true, "width": 80},{"field":"name","title":"任务名","sort":true,"align":"center", "width": 150},{"field":"crontab_rule","title":"时间规则","sort":true,"align":"center"},{"field":"robot_url","title":"机器人URL","sort":true,"align":"center"},{"field":"status","title":"状态","sort":true,"align":"center", "width": 90},{"field":"message","title":"要发送的消息","sort":true,"align":"center", "width": 150},{"field":"create_time","title":"添加时间","sort":true},{"field":"update_time","title":"修改时间","sort":true},{"fixed":"right","title":"操作","toolbar":"#task-table-bar","width":150}]]
     });
 
     table.on('toolbar(task-table)', function(obj) {
