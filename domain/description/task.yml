@@ -1,0 +1,23 @@
+---
+display_name: 任务
+structs:
+  name:
+    type: name
+    display_name: 任务名
+  crontab_rule:
+    type: name
+    display_name: 时间规则
+  robot_url:
+    type: url
+    display_name: 机器人URL
+  status:
+    data_type: enum
+    formater:
+      valid: 有效
+      invalid: 无效
+    display_name: 状态
+  message:
+    type: description
+    display_name: 要发送的消息
+repeat_check_structs: []
+...

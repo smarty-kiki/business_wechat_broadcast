@@ -18,6 +18,7 @@ include FRAME_DIR.'/database/mysql.php';
 include FRAME_DIR.'/storage/mongodb.php';
 include FRAME_DIR.'/cache/redis.php';
 include FRAME_DIR.'/queue/beanstalk.php';
+include FRAME_DIR.'/spider/beanstalk.php';
 include FRAME_DIR.'/unitofwork.php';
 include FRAME_DIR.'/log/file.php';
 

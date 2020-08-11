@@ -9,6 +9,7 @@ if_get('/', function ()
                 'key'  => 'module',
                 'icon_class' => 'layui-icon-component',
                 'children' => [
+                    [ 'name' => '任务管理', 'key' => 'task', 'href' => '/tasks', ],
                 ],
             ]
         ],
