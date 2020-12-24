@@ -3,5 +3,6 @@ display_name: 任务执行日志
 structs:
   result:
     type: name
+    display_name: 执行结果
 repeat_check_structs: []
 ...
