@@ -9,8 +9,8 @@ if_get('/', function ()
                 'key'  => 'module',
                 'icon_class' => 'layui-icon-component',
                 'children' => [
-                    [ 'name' => '任务执行日志管理', 'key' => 'task_log', 'href' => '/task_logs', ],
                     [ 'name' => '任务管理', 'key' => 'task', 'href' => '/tasks', ],
+                    [ 'name' => '任务执行日志管理', 'key' => 'task_log', 'href' => '/task_logs', ],
                 ],
             ]
         ],
