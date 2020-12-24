@@ -18,17 +18,6 @@
           <div class="layui-card-header">任务执行日志</div>
           <div class="layui-card-body">
             <table class="layui-hide" id="task_log-table" lay-filter="task_log-table"></table>
-
-            <script type="text/html" id="task_log-table-toolbar">
-              <div class="layui-btn-container">
-                <button class="layui-btn layui-btn-sm" lay-event="add">添加任务执行日志</button>
-              </div>
-            </script>
-
-            <script type="text/html" id="task_log-table-bar">
-              <a class="layui-btn layui-btn-xs" lay-event="update">修改</a>
-              <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
-            </script>
           </div>
         </div>
       </div>
