@@ -57,6 +57,7 @@ if_not_found(function () {
 });
 
 // init controller
+include CONTROLLER_DIR.'/task_log.php';
 include CONTROLLER_DIR.'/task.php';
 include CONTROLLER_DIR.'/index.php';
 

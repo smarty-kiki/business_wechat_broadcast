@@ -9,6 +9,7 @@ if_get('/', function ()
                 'key'  => 'module',
                 'icon_class' => 'layui-icon-component',
                 'children' => [
+                    [ 'name' => '任务执行日志管理', 'key' => 'task_log', 'href' => '/task_logs', ],
                     [ 'name' => '任务管理', 'key' => 'task', 'href' => '/tasks', ],
                 ],
             ]
@@ -18,5 +19,9 @@ if_get('/', function ()
 
 if_get('/dashboard', function ()
 {
-    return 'dashboard';
+    return render('index/dashboard', [
+        'valid_count' => dao('task')->count_valid(),
+        'total_count' => dao('task')->count(),
+        'total_log_count' => dao('task_log')->count(),
+    ]);
 });

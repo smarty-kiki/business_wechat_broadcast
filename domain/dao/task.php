@@ -14,4 +14,11 @@ class task_dao extends dao
             'status' => task::STATUS_VALID
         ]);
     }/*}}}*/
+
+    public function count_valid()
+    {/*{{{*/
+        return $this->count_by_condition('status = :valid', [
+            ':valid' => task::STATUS_VALID,
+        ]);
+    }/*}}}*/
 }

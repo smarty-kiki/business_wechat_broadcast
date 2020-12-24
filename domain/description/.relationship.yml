@@ -1,2 +1,17 @@
 ---
+- from:
+    entity: task
+    to_attribute_name: task
+    to_display: "'['.$this->id.']'.$this->name"
+    to_snaps:
+      task:
+        - robot_url
+        - message
+  to:
+    entity: task_log
+    from_attribute_name: task_logs
+    from_display: "$this->id"
+    from_snaps: []
+  relationship_type: has_many
+  association_type: composition
 ...

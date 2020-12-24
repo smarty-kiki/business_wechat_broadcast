@@ -56,6 +56,7 @@ class task extends entity
 
     public function __construct()
     {/*{{{*/
+        $this->has_many('task_logs', 'task_log');
     }/*}}}*/
 
     public static function create($name, $crontab_rule, $robot_url, $status, $message)
@@ -135,6 +136,20 @@ class task extends entity
     public function set_status_invalid()
     {/*{{{*/
         return $this->status = self::STATUS_INVALID;
+    }/*}}}*/
+
+    public function delete()
+    {/*{{{*/
+        foreach ($this->task_logs as $task_log) {
+            $task_log->delete();
+        }
+
+        parent::delete();
+    }/*}}}*/
+
+    public function display_for_task_logs_task()
+    {/*{{{*/
+        return '['.$this->id.']'.$this->name;
     }/*}}}*/
     /* generated code end */
 }

@@ -1,0 +1,7 @@
+---
+display_name: 任务执行日志
+structs:
+  result:
+    type: name
+repeat_check_structs: []
+...
