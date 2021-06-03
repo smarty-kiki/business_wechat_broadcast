@@ -7,14 +7,7 @@ if_get('/task_logs', function ()
 
 if_get('/task_logs/ajax', function ()
 {/*{{{*/
-    list(
-        $inputs['result'], $inputs['task_id'], $inputs['snap_task_robot_url'], $inputs['snap_task_message']
-    ) = input_list(
-        'result', 'task_id', 'snap_task_robot_url', 'snap_task_message'
-    );
-    $inputs = array_filter($inputs, 'not_null');
-
-    $task_logs = dao('task_log')->find_all_by_column($inputs);
+    $task_logs = dao('task_log')->find_all_paginated_by_current_page_and_condition(1, 200, 'order by id desc');
 
     return [
         'code' => 0,

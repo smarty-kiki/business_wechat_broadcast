@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>任务执行日志</title>
+  <title>任务执行日志 (近 200 条)</title>
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -15,7 +15,7 @@
     <div class="layui-row layui-col-space15">
       <div class="layui-col-md12">
         <div class="layui-card">
-          <div class="layui-card-header">任务执行日志</div>
+          <div class="layui-card-header">任务执行日志 (近 200 条)</div>
           <div class="layui-card-body">
             <table class="layui-hide" id="task_log-table" lay-filter="task_log-table"></table>
           </div>
