@@ -7,13 +7,13 @@ if_get('/task_logs', function ()
 
 if_get('/task_logs/ajax', function ()
 {/*{{{*/
-    $task_logs = dao('task_log')->find_all_paginated_by_current_page_and_condition(1, 200, 'order by id desc');
+    $task_logs = dao('task_log')->find_all_paginated_by_current_page_and_condition(1, 200, '1 = 1 order by id desc');
 
     return [
         'code' => 0,
         'msg'  => '',
-        'count' => count($task_logs),
-        'data' => array_build($task_logs, function ($id, $task_log) {
+        'count' => $task_logs['pagination']['count'],
+        'data' => array_build($task_logs['list'], function ($id, $task_log) {
             return [
                 null,
                 [
