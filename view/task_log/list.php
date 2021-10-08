@@ -41,7 +41,7 @@
       ,height: 'full-100'
       ,cellMinWidth: 80
       ,page: false
-      ,cols: [[{"field":"id","title":"ID","sort":true, "width": 60},{"field":"result","title":"执行结果","sort":true,"align":"center", "width": 100},{"field":"task_display","title":"任务","sort":true},{"field":"snap_task_robot_url","title":"任务机器人URL","sort":true,"align":"center"},{"field":"snap_task_message","title":"任务要发送的消息","sort":true,"align":"center"},{"field":"create_time","title":"时间","sort":true}]]
+      ,cols: [[{"field":"id","title":"ID","sort":true, "width": 60},{"field":"result","title":"执行结果","sort":true,"align":"center", "width": 300},{"field":"task_display","title":"任务","sort":true},{"field":"snap_task_robot_url","title":"任务机器人URL","sort":true,"align":"center"},{"field":"snap_task_message","title":"任务要发送的消息","sort":true,"align":"center"},{"field":"create_time","title":"时间","sort":true}]]
     });
 
     table.on('toolbar(task_log-table)', function(obj) {
