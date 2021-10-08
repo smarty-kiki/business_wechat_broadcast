@@ -5,7 +5,7 @@ create table if not exists `task_log` (
     `create_time` datetime null,
     `update_time` datetime null,
     `delete_time` datetime null,
-    `result` varchar(30) null,
+    `result` varchar(200) null,
     `task_id` bigint(20) unsigned not null,
     `snap_task_robot_url` varchar(1000) null,
     `snap_task_message` varchar(200) null,

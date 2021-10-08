@@ -62,9 +62,9 @@ class task_log extends entity
             'result' => [
                 [
                     'function' => function ($value) {
-                        return mb_strlen($value) <= 30;
+                        return mb_strlen($value) <= 200;
                     },
-                    'failed_message' => '不能超过 30 个字',
+                    'failed_message' => '不能超过 200 个字',
                 ],
             ],
         ];

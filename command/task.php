@@ -19,7 +19,9 @@ command('task:trigger', '任务触发', function ()
                 });
             }
         } catch (throwable $ex) {
-            task_log::create($task, '发送失败 时间规则有问题');
+            unit_of_work(function () use ($task) {
+                task_log::create($task, '发送失败 时间规则有问题');
+            });
         }
     }
 });
